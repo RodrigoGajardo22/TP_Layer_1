@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 import ar.unrn.tp3.modelo.Participante;
 import ar.unrn.tp3.modelo.RepositorioDeParticipante;
 import excepciones.Coneccion;
+import excepciones.ErrorDeDatos;
 
 public class Ui extends JFrame {
 	private JTextField nombre;
@@ -59,6 +60,8 @@ public class Ui extends JFrame {
 				} catch (Coneccion e1) {
 
 					e1.printStackTrace();
+				} catch (ErrorDeDatos e1) {
+					e1.printStackTrace();
 				}
 			}
 		});
@@ -69,7 +72,7 @@ public class Ui extends JFrame {
 		setVisible(true);
 	}
 
-	private void onBotonCargar() throws Coneccion {
+	private void onBotonCargar() throws Coneccion, ErrorDeDatos {
 
 		participante = new Participante(nombre.getText(), telefono.getText(), region.getText());
 		repositorio.nuevoParticipante(participante);

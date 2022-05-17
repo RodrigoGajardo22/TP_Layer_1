@@ -17,8 +17,8 @@ public class JdbcParticipante implements RepositorioDeParticipante {
 
 		dbConn = ConnectionManager.getConnection();
 		PreparedStatement st = null;
-		try {
 
+		try {
 			st = dbConn.prepareStatement("insert into participantes(Nombre, Telefono, Region)values(?,?,?)");
 			st.setString(1, participante.nombre());
 			st.setString(2, participante.telefono());
