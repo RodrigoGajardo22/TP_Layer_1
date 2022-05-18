@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import excepciones.Coneccion;
+import ar.unrn.tp3.modelo.Coneccion;
 
 public class ConnectionManager {
 	private static String DRIVER = "com.mysql.jdbc.Driver";

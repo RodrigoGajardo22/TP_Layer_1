@@ -1,7 +1,5 @@
 package ar.unrn.tp3.modelo;
 
-import excepciones.ErrorDeDatos;
-
 public class Participante {
 
 	private String nombre;
@@ -36,7 +34,7 @@ public class Participante {
 		}
 	}
 
-	public boolean validarTelefono(String region) {
+	public boolean validarTelefono(String telefono) {
 		String regex = "\\d{4}-\\d{6}";
 		return telefono.matches(regex);
 	}

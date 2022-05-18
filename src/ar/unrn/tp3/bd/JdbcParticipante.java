@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import ar.unrn.tp3.modelo.Coneccion;
 import ar.unrn.tp3.modelo.Participante;
 import ar.unrn.tp3.modelo.RepositorioDeParticipante;
-import excepciones.Coneccion;
 
 public class JdbcParticipante implements RepositorioDeParticipante {
 
@@ -19,7 +19,7 @@ public class JdbcParticipante implements RepositorioDeParticipante {
 		PreparedStatement st = null;
 
 		try {
-			st = dbConn.prepareStatement("insert into participantes(Nombre, Telefono, Region)values(?,?,?)");
+			st = dbConn.prepareStatement("insert into participantes(Nombre,Telefono,Region)values(?,?,?)");
 			st.setString(1, participante.nombre());
 			st.setString(2, participante.telefono());
 			st.setString(3, participante.region());
