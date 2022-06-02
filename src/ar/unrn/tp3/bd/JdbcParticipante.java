@@ -13,7 +13,7 @@ public class JdbcParticipante implements RepositorioDeParticipante {
 	private Connection dbConn;
 
 	@Override
-	public void nuevoParticipante(Participante participante) throws Coneccion {
+	public boolean nuevoParticipante(Participante participante) throws Coneccion {
 
 		dbConn = ConnectionManager.getConnection();
 		PreparedStatement st = null;
@@ -24,6 +24,7 @@ public class JdbcParticipante implements RepositorioDeParticipante {
 			st.setString(2, participante.telefono());
 			st.setString(3, participante.region());
 			st.executeUpdate();
+			return true;
 		} catch (SQLException e) {
 			throw new Coneccion("Error de aplicacion");
 		} finally {

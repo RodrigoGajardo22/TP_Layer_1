@@ -4,6 +4,6 @@ package ar.unrn.tp3.modelo;
 
 public interface RepositorioDeParticipante {
 
-	public void nuevoParticipante(Participante p) throws Coneccion;
+	public boolean nuevoParticipante(Participante p) throws Coneccion;
 
 }

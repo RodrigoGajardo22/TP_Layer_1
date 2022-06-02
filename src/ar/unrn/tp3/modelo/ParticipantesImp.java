@@ -8,9 +8,9 @@ public class ParticipantesImp implements Participantes {
 		this.respositorio = repositorio;
 	}
 
-	public void nuevoParticipante(String nombre, String tel, String region) throws ErrorDeDatos, Coneccion {
+	public boolean nuevoParticipante(String nombre, String tel, String region) throws ErrorDeDatos, Coneccion {
 		Participante participante = new Participante(nombre, tel, region);
-		respositorio.nuevoParticipante(participante); // interfaz de salida
+		return respositorio.nuevoParticipante(participante); // interfaz de salida
 
 	}
 

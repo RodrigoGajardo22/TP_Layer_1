@@ -8,11 +8,11 @@ public class Participante {
 
 	public Participante(String nombre, String tel, String region) throws ErrorDeDatos {
 
-		validarDatos(nombre, tel, region);
-
 		this.nombre = nombre;
 		this.telefono = tel;
 		this.region = region;
+
+		validarDatos(nombre, tel, region);
 
 	}
 
